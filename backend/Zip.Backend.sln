@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zip.Backend", "Zip.Backend\Zip.Backend.csproj", "{7ACB42EA-2D57-486E-8EB1-77235E36FC97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zip.Backend.Tests", "Zip.Backend.Tests\Zip.Backend.Tests.csproj", "{22B98021-344C-45C9-B9F5-42618BB303A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{E55BB4D3-DF57-4DF2-807E-22D8C2B54B14}"
+ProjectSection(SolutionItems) = preProject
+	Readme.md = Readme.md
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7ACB42EA-2D57-486E-8EB1-77235E36FC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ACB42EA-2D57-486E-8EB1-77235E36FC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ACB42EA-2D57-486E-8EB1-77235E36FC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ACB42EA-2D57-486E-8EB1-77235E36FC97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B98021-344C-45C9-B9F5-42618BB303A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B98021-344C-45C9-B9F5-42618BB303A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B98021-344C-45C9-B9F5-42618BB303A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B98021-344C-45C9-B9F5-42618BB303A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
