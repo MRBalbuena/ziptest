@@ -1,5 +1,5 @@
 import Axios from "axios";
-import env from "../env";
+import { env } from "../env";
 
 export type Guest = {
   id: string;

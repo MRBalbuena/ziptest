@@ -26,7 +26,11 @@ const Layout = ({ children, title }: Props) => (
         |{" "}
         <Link href="/guestbook">
           <a>Guest Book</a>
-        </Link>
+        </Link>{" "}
+        |{" "}        
+        <Link href="/gallery">
+          <a>Gallery</a>
+        </Link>  
       </nav>
     </header>
     {children}
