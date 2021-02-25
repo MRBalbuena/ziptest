@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import ReactDOM from 'react-dom';
 import Link from "next/link";
 import Head from "next/head";
 
@@ -27,10 +28,10 @@ const Layout = ({ children, title }: Props) => (
         <Link href="/guestbook">
           <a>Guest Book</a>
         </Link>{" "}
-        |{" "}        
+        |{" "}
         <Link href="/gallery">
           <a>Gallery</a>
-        </Link>  
+        </Link>
       </nav>
     </header>
     {children}
@@ -41,9 +42,11 @@ const Layout = ({ children, title }: Props) => (
   </div>
 );
 
-const styleLink = document.createElement("link");
-styleLink.rel = "stylesheet";
-styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
-document.head.appendChild(styleLink);
+if (typeof window !== 'undefined') {
+  const styleLink = document.createElement("link");
+  styleLink.rel = "stylesheet";
+  styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+  document.head.appendChild(styleLink);
+}
 
 export default Layout;

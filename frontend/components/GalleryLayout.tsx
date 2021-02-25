@@ -33,6 +33,30 @@ const cards: cardModel[] = [
     header: 'Molly',
     description: 'Primary Contact',
   },  
+  {
+    avatar: 'https://react.semantic-ui.com/images/avatar/large/molly.png',
+    date: 'Joined in 2013',
+    header: 'Molly',
+    description: 'Primary Contact',
+  },    
+  {
+    avatar: 'https://react.semantic-ui.com/images/avatar/large/helen.jpg',
+    date: 'Joined in 2013',
+    header: 'Helen',
+    description: 'Primary Contact',
+  },
+  {
+    avatar: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
+    date: 'Joined in 2013',
+    header: 'Matthew',
+    description: 'Primary Contact',
+  },
+  {
+    avatar: 'https://react.semantic-ui.com/images/avatar/large/helen.jpg',
+    date: 'Joined in 2013',
+    header: 'Helen',
+    description: 'Primary Contact',
+  }
 ]
 
 export default class PlaceholderExampleCard extends Component {

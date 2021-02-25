@@ -18,6 +18,9 @@ buildNumber.properties
 # Net
 *.suo
 
+# Visual Studio
+*.dtbcache.v2
+
 # Logs
 logs
 *.log
