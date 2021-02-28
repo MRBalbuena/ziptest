@@ -10,7 +10,7 @@ namespace Zip.Backend.Provider
 {
   public interface IGalleryProvider
   {
-    Task<DogGalleryResponse[]> GetGalleryAsync();
+    Task<DogGalleryResponse[]> GetGalleryAsync(int numberOfItems);
     Task SaveGalleryImagesAsync(DogGalleryResponse[] galleryData);
   }
 }

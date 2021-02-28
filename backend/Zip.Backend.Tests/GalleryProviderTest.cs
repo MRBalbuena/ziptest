@@ -29,7 +29,7 @@ namespace Zip.Backend.Tests
       {
         var gp = new GalleryProvider(mqDogGalleryRepo.Object, dbContext);
 
-        var r = await gp.GetGalleryAsync();
+        var r = await gp.GetGalleryAsync(8);
 
         r.Length.Should().Be(8);
         r.Select(a => a.Url).Should().NotBeNullOrEmpty();

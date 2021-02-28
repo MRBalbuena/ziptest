@@ -12,8 +12,7 @@ namespace Zip.Backend.Provider
   public class GalleryProvider : IGalleryProvider
   {
     private readonly IDogGalleryRepo _dogGalleryRepo;
-    private readonly GuestBookContext _db;
-    const int calls = 8;
+    private readonly GuestBookContext _db;    
 
     public GalleryProvider(IDogGalleryRepo dogGalleryRepo, GuestBookContext db)
     {
@@ -21,11 +20,15 @@ namespace Zip.Backend.Provider
       _db = db;
     }
 
-
-    public async Task<DogGalleryResponse[]> GetGalleryAsync()
+    /// <summary>
+    /// Run async request to get a number of calls tp get images from a Repository. It could eventually decoupled to a m-service
+    /// </summary>
+    /// <param name="numberOfItems>Number of images requested</param>
+    /// <returns></returns>
+    public async Task<DogGalleryResponse[]> GetGalleryAsync(int numberOfItems)
     {
       var galleryTasks = new List<Task<DogGalleryResponse>>();
-      for (int i = 0; i < calls; i++)
+      for (int i = 0; i < numberOfItems; i++)
       {
         galleryTasks.Add(_dogGalleryRepo.GetDogGalleryDataAsync());
       }
@@ -40,7 +43,7 @@ namespace Zip.Backend.Provider
     /// <summary>
     /// Saves the images passed to Gallery DS
     /// </summary>
-    /// <param name="dogGalleryData"></param>
+    /// <param name="dogGalleryData">Array with DogGalleryResponses passed to save</param>
     /// <returns></returns>
     public async Task SaveGalleryImagesAsync(DogGalleryResponse[] dogGalleryData)
     {
