@@ -12,6 +12,10 @@ namespace Zip.Backend.Repositories
   public class DogGalleryRepo : IDogGalleryRepo
   {    
 
+    /// <summary>
+    /// Invokes the URL to get data from the URL: URL for the image and file size.
+    /// </summary>
+    /// <returns></returns>
     public async Task<DogGalleryResponse> GetDogGalleryDataAsync()
     {
       // TODO: Refactor to pass dogGalleryUrl from appSettings using a configProviderf injected

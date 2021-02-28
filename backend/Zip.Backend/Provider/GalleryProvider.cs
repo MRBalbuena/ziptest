@@ -9,6 +9,12 @@ using Zip.Backend.Repositories.RepositoryModels;
 
 namespace Zip.Backend.Provider
 {
+
+  /// <summary>
+  /// This class manages requests and saving data related with Gallery.
+  /// If it had more logic, or Gallery got more functionality could be renamed to service.
+  /// This provider requires a IDogGalleryRepo and a _db context to work. 
+  /// </summary>
   public class GalleryProvider : IGalleryProvider
   {
     private readonly IDogGalleryRepo _dogGalleryRepo;
@@ -63,6 +69,10 @@ namespace Zip.Backend.Provider
       await _db.SaveChangesAsync();
     }
 
+    /// <summary>
+    /// validates the number of records doesn't exceed the max defined in specs
+    /// </summary>
+    /// <returns></returns>
     private async Task CheckRecords()
     {
       var totalRecords = _db.Gallery.Count();
