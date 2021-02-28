@@ -14,6 +14,7 @@ namespace Zip.Backend.Repositories
 
     public async Task<DogGalleryResponse> GetDogGalleryDataAsync()
     {
+      // TODO: Refactor to pass dogGalleryUrl from appSettings using a configProviderf injected
       const string dogGalleryUrl = "https://random.dog/woof.json";
 
       DogGalleryResponse dogGalleryData = new DogGalleryResponse();
@@ -22,7 +23,6 @@ namespace Zip.Backend.Repositories
       {
         client.DefaultRequestHeaders.Accept.Add(
             new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-
 
         using (HttpResponseMessage response = client.GetAsync(dogGalleryUrl).Result)
         {

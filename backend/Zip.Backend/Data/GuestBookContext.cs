@@ -1,5 +1,7 @@
 using System;
+using System.IO;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Zip.Backend.Data
 {
@@ -9,6 +11,7 @@ namespace Zip.Backend.Data
         {
         }
         public DbSet<Guest> GuestBook { get; set; }
+        public DbSet<Gallery> Gallery { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -19,10 +22,21 @@ namespace Zip.Backend.Data
                     .IsConcurrencyToken()
                     .IsRequired();
             });
+            modelBuilder.Entity<Gallery>(gallery =>
+              {
+
+                gallery.HasKey(i => i.Id);
+                gallery.Property(i => i.Created)
+                    .IsConcurrencyToken()
+                    .IsRequired();
+            });
         }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseSnakeCaseNamingConvention();
+        {
+            optionsBuilder.UseSnakeCaseNamingConvention();
+        }
+      
     }
 
     public class Guest
@@ -36,8 +50,7 @@ namespace Zip.Backend.Data
     public class Gallery
     {
         public Guid Id { get; set; }
-        public string Url { get; set; }
-        public string Extension { get; set; }
+        public string Url { get; set; }        
         public DateTime Created { get; set; }
     }
 }

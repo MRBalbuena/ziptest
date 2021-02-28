@@ -26,6 +26,7 @@ namespace Zip.Backend.Controllers
     public async Task<IEnumerable<GetGalleryResponse>> Get()
     {
       var gallery = await _galleryProvider.GetGalleryAsync();
+      await _galleryProvider.SaveGalleryImagesAsync(gallery);
 
       var response = gallery
         .Select(g => new GetGalleryResponse

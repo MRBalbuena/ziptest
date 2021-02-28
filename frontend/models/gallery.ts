@@ -16,7 +16,7 @@ const api = Axios.create({
     baseURL: env.apiUrl,
 });
 
-const imageExtensions: string[] = ['.jpg', '.gif', '.png', '.jpeg'];
+const imageExtensions: string[] = ['.jpg', '.gif', '.png', '.jpeg', '.JPG'];
 
 export const getGallery = async (): Promise<cardModel[]> => {
     const resp = await api.get("/gallery");    

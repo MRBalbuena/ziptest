@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Zip.Backend.Data;
@@ -9,9 +10,10 @@ using Zip.Backend.Data;
 namespace Zip.Backend.Migrations
 {
     [DbContext(typeof(GuestBookContext))]
-    partial class GuestBookContextModelSnapshot : ModelSnapshot
+    [Migration("20210228164115_AddGalleryTable")]
+    partial class AddGalleryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

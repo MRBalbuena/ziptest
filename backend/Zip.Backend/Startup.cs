@@ -23,8 +23,8 @@ namespace Zip.Backend
         public void ConfigureServices(IServiceCollection services)
         {
             // Injects service on initialization
-            services.AddSingleton<IGalleryProvider, GalleryProvider>();
-            services.AddSingleton<IDogGalleryRepo, DogGalleryRepo>();
+            services.AddScoped<IGalleryProvider, GalleryProvider>();
+            services.AddScoped<IDogGalleryRepo, DogGalleryRepo>();
 
             services.AddCors(c =>
             {
