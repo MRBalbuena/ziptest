@@ -22,7 +22,6 @@ export const getGallery = async (): Promise<cardModel[]> => {
     const resp = await api.get("/gallery");    
     let gallery = resp.data.map( c => 
         ( {url: c.url, video: !imageExtensions.includes(c.extension)} ) 
-    );
-    console.log(gallery);
+    );    
     return gallery as cardModel[];
 };
