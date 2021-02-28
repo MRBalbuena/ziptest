@@ -32,7 +32,8 @@ namespace Zip.Backend.Controllers
         {
           Url = g.Url,
           Extension = Path.GetExtension(g.Url)
-        });
+        })
+        .ToList();
 
       return response;
     }

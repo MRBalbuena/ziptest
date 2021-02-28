@@ -54,8 +54,7 @@ export default class GalleryLayout extends Component {
                       size='large'
                       src={card.url} />
                   )
-                  )}
-
+                )}
               </Card>
             ))}
           </Card.Group>
